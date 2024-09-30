@@ -14,6 +14,4 @@ public class TelescopeConstants {
     public static final float telKd = 0f;
     public static final float telIzone = 200f;
     public static final float overrideFactor = 10f;
-
-
 }

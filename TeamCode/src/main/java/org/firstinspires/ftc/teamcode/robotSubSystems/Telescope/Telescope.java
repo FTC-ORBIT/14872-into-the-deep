@@ -16,6 +16,7 @@ public class Telescope {
 
     public static void init(HardwareMap hardwareMap , String name) {
         telMotor = hardwareMap.get(DcMotor.class, name);
+        telMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
     }
     public static void operate(TelescopeStates state , Gamepad gamepad1 , Gamepad gamepad2){
         switch (state){
