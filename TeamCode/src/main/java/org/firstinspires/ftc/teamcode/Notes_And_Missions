@@ -1,7 +1,6 @@
 projects that would help us:
 - check and upgrade the Orbit_Auto_Maker ( not working with RoadRunner 1.0 yet, need to check the RRpathGen if we want to update , because the orbit auto maker based on it)
 - More organized telemetry - to print and add data in one place (in SubSystemManger.printStates).
-- meepMeep - meepMeep its the best roadRunner tool. if it possible lets download and use it
 
 practice :
 - reprogram the color sensor : simple
@@ -18,8 +17,8 @@ practice :
 - AutoShoot - automatic shooter by april tags (he see the tag and automatically shoot)+ ability to change aiming angle : hard
 - AutoDropPixel - make buckster put pixels automatically  : hard
 - use the logger to log the AutoDropPixel / AutoShoot and make graph. : hard
-- code for a turet - by vision. : hard
-- AutoTuretShoot - mix the rook with the Auto Shoot : hard
+- code for a turret - by vision. : hard
+- AutoTurretShoot - mix the rook with the Auto Shoot : hard
 
 
 
