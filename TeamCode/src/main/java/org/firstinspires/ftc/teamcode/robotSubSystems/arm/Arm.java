@@ -57,6 +57,9 @@ public static void operate(ArmState state, Gamepad gamepad1){
         case OVERRIDE:
             wantedPos = (float) MathFuncs.radsToEncoderTicks( Math.atan(ArmConstants.armHFromTheGround/-gamepad1.right_stick_x));
             break;
+        case CLIMB:
+            wantedPos = ArmConstants.climbPos;
+            break;
     }
     armPID.setWanted(wantedPos);
     servo.setPosition(servoPos);

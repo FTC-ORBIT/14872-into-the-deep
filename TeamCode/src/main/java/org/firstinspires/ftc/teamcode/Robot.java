@@ -63,7 +63,7 @@ public class Robot extends LinearOpMode {
           GlobalData.currentTime = (float) robotTime.seconds();
           Vector leftStick = new Vector(-gamepad1.left_stick_x,  gamepad1.left_stick_y);
           float omega = -gamepad1.right_trigger + gamepad1.left_trigger;
-          if (gamepad1.left_bumper && SubSystemManager.wanted == RobotState.TRAVEL){
+          if (gamepad1.dpad_up && SubSystemManager.wanted == RobotState.TRAVEL){
 //              AutoDriveAprilTags.getAprilTagDetectionOmni();
           }else {
               DrivetrainOmni.operate(leftStick, omega, gamepad1);
