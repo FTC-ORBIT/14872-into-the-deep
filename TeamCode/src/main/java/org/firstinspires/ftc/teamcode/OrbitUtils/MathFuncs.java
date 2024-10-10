@@ -76,4 +76,14 @@ public final class MathFuncs {
     public static float hypotenuse(final float a, final float b) {
         return (float) Math.sqrt(a * a + b * b);
     }
+    public static double ticksToRad;
+    public static double encoderTicksToRads(double clicksNumber){
+        MathFuncs.ticksToRad =  (2*Math.PI)/clicksNumber;
+        return MathFuncs.ticksToRad;
+    }
+    public static double radToTicks;
+    public static double radsToEncoderTicks (double wantedRad){
+        MathFuncs.radToTicks = (2*Math.PI)*wantedRad;
+        return MathFuncs.radToTicks;
+    }
 }

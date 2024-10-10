@@ -18,4 +18,5 @@ public class ArmConstants {
     public static final float ArmIZone = 0f;
     public static final float overrideFactor = 0f;
     public static final float testPos = 0f;
+    public static final float armHFromTheGround = 26f;
 }

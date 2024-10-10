@@ -5,9 +5,11 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.teamcode.OrbitUtils.MathFuncs;
 import org.firstinspires.ftc.teamcode.OrbitUtils.PID;
+import org.firstinspires.ftc.teamcode.robotSubSystems.arm.ArmConstants;
 
-public class Telescope {
+public class   Telescope {
     public static DcMotor telMotor;
     public static float currentPose = 0;
     public static float wantedPose = 0;
@@ -41,12 +43,14 @@ public class Telescope {
             case OVERRIDE:
                 wantedPose += -gamepad1.right_stick_y * TelescopeConstants.overrideFactor;
                 break;
+            case INTAKEOVERRIDE:
+                wantedPose = (float) (-gamepad1.left_stick_x/Math.cos(Math.atan(ArmConstants.armHFromTheGround/-gamepad1.right_stick_x)));
+                break;
 
         }
         currentPose = telMotor.getCurrentPosition() - zeroPose;
         telescopePID.setWanted(wantedPose);
         telMotor.setPower(telescopePID.update(currentPose));
-
         if(gamepad2.right_bumper) {
             zeroPose = telMotor.getCurrentPosition();
         }

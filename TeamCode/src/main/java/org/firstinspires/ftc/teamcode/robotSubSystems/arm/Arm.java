@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
 import org.firstinspires.ftc.robotcore.external.Telemetry;
+import org.firstinspires.ftc.teamcode.OrbitUtils.MathFuncs;
 import org.firstinspires.ftc.teamcode.OrbitUtils.PID;
 
 public class Arm {
@@ -54,7 +55,7 @@ public static void operate(ArmState state, Gamepad gamepad1){
             servoPos = ArmConstants.servoChamberPos;
             break;
         case OVERRIDE:
-            wantedPos = ArmConstants.overrideFactor * -gamepad1.right_stick_y;
+            wantedPos = (float) MathFuncs.radsToEncoderTicks( Math.atan(ArmConstants.armHFromTheGround/-gamepad1.right_stick_x));
             break;
     }
     armPID.setWanted(wantedPos);
@@ -70,6 +71,7 @@ public static void test(Gamepad gamepad1 , Telemetry telemetry, boolean auto){
         wantedPos = ArmConstants.testPos;
     }else{
         wantedPos = ArmConstants.overrideFactor * -gamepad1.right_stick_y;
+
     }
     armPID.setWanted(wantedPos);
     currentPos = armMotor.getCurrentPosition();
