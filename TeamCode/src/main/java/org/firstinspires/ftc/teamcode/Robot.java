@@ -65,10 +65,8 @@ public class Robot extends LinearOpMode {
           float omega = -gamepad1.right_trigger + gamepad1.left_trigger;
           if (gamepad1.left_bumper && SubSystemManager.wanted == RobotState.TRAVEL){
 //              AutoDriveAprilTags.getAprilTagDetectionOmni();
-//              AutoDriveAprilTags.getAprilTagDetectionTank();
           }else {
               DrivetrainOmni.operate(leftStick, omega, gamepad1);
-//          DriveTrainTank.operate(-gamepad1.left_stick_y, gamepad1.right_trigger, gamepad1.left_trigger, telemetry, gamepad1);
           }
           SubSystemManager.setSubsystemToState(gamepad1 , gamepad2);
           GlobalData.deltaTime = GlobalData.currentTime - GlobalData.lastTime;
